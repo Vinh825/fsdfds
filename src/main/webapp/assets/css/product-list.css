@@ -1,0 +1,185 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/*
+    Created on : Jun 18, 2025, 12:28:20 AM
+    Author     : HoangSang
+*/
+
+
+.slider-wrapper { position: relative; }
+    .slider-viewport {
+        overflow: hidden;
+    }
+    .slider-track {
+        display: flex;
+    }
+
+    .slider-item {
+        width: 280px; /* Chiều rộng cố định cho mỗi sản phẩm */
+        flex-shrink: 0;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    .slider-nav { position: absolute; top: 40%; transform: translateY(-50%); z-index: 10; width: 45px; height: 45px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.5); display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; }
+    .slider-nav:hover { background-color: rgba(255, 255, 255, 0.4); }
+    .slider-nav:disabled { opacity: 0.3; cursor: not-allowed; }
+    .prev-nav { left: -15px; }
+    .next-nav { right: -15px; }
+
+
+    .section{
+        margin-top: 3%;
+    }
+    .details-section {
+        padding: 60px 0;
+    }
+
+    /* === CSS CHO GALLERY HÌNH ẢNH === */
+    .product-gallery .main-image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #2a2a38;
+    }
+    .product-gallery .main-image-container #mainProductImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .thumbnail-scroller {
+        position: relative;
+        margin-top: 15px;
+    }
+    .thumbnail-container {
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        gap: 12px;
+        padding: 5px 0;
+    }
+
+    .thumbnail-container .thumb {
+        flex: 0 0 100px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #2a2a38;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .thumbnail-container .thumb:hover {
+        border-color: #00aaff;
+    }
+    .thumbnail-container .thumb.active {
+        border-color: #00ff75;
+        transform: scale(1.05);
+    }
+
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .scroll-arrow.left {
+        left: -15px;
+    }
+    .scroll-arrow.right {
+        right: -15px;
+    }
+    /* End CSS Gallery */
+
+    .product-info .product-brand {
+        color: #8e95a5;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .product-info .product-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color:#fff;
+    }
+    .product-info .product-price {
+        font-size: 2.5rem;
+        color: #00ff75;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+    .product-info .product-price .old-price {
+        font-size: 1.5rem;
+        color: red;
+        text-decoration: line-through;
+        margin-left: 15px;
+        font-weight: 400;
+    }
+
+    .info-section {
+        padding: 25px;
+        background-color: #1a1a24;
+        border: 1px solid #2a2a38;
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+    .info-section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #2a2a38;
+    }
+    .info-section p, .info-section dd {
+        color: #b9c0d1;
+    }
+    .info-section dt {
+        color: #fff;
+    }
+
+    .btn-buy {
+        background-color: #00ff75;
+        color: #151521;
+        font-weight: bold;
+        padding: 12px 30px;
+        border-radius: 8px;
+
+    }
+    .btn-cart {
+        background-color: transparent;
+        border: 2px solid #00ff75;
+        color: #00ff75;
+        font-weight: bold;
+        padding: 12px 30px;
+        border-radius: 8px;
+    }
+
+/* Ensure these rules are at the end of the file */
+/* Add these rules at the very end of product-list.css */
+.product-info form.product-buttons { /* More specific selector */
+    display: flex !important; /* Ensure flexbox is applied */
+    flex-direction: column !important; /* Force vertical stacking */
+    gap: 15px; /* Add space between items */
+}
+
+.product-info form.product-buttons .btn {
+    width: 100% !important; /* Ensure full width */
+    margin-left: 0 !important; /* Remove any lingering margin-left from Bootstrap */
+    margin-right: 0 !important; /* Remove any lingering margin-right */
+}
