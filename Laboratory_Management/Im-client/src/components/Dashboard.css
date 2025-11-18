@@ -1,0 +1,41 @@
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Layout chính cao 100% màn hình */
+
+    /* Lấy màu nền từ file CSS của Login */
+    background: var(--bg);
+    color: var(--text);
+}
+
+.dashboard-layout-main {
+    flex: 1;
+    /* 1. Chiếm toàn bộ không gian còn lại */
+    overflow-y: auto;
+    /* 2. TỰ ĐỘNG THÊM THANH CUỘN KHI CẦN */
+    padding-top: 64px;
+    /* Space for fixed header */
+}
+
+/* * 3. DI CHUYỂN CÁC STYLE SCROLLBAR TỪ DashboardHome.css SANG ĐÂY
+ * (Lưu ý: Thêm .dashboard-layout-main vào trước)
+ */
+.dashboard-layout-main::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.dashboard-layout-main::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.dashboard-layout-main::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 10px;
+}
+
+.dashboard-layout-main::-webkit-scrollbar-thumb:hover {
+    background: var(--green-2);
+}

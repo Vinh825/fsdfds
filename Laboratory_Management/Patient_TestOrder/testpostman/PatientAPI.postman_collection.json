@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "a91f994a-2eab-4e13-af49-30f70c283a63",
+    "name": "Patient API Collection",
+    "description": "Postman Collection for Patient Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Patient",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-User-Id", "value": "system"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientCode\": \"BN0001\",\n  \"fullName\": \"Nguyễn Văn A\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"NAM\",\n  \"address\": \"123 Nguyễn Trãi, Q.1, TP.HCM\",\n  \"phoneNumber\": \"0912345678\",\n  \"email\": \"vana@example.com\",\n  \"identityNumber\": \"012345678\",\n  \"emergencyContactName\": \"Lê Thị B\",\n  \"emergencyContactPhone\": \"0908765432\",\n  \"isActive\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/patients",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patients"]
+        }
+      }
+    },
+    {
+      "name": "Update Patient",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-User-Id", "value": "system"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientCode\": \"BN0001\",\n  \"fullName\": \"Nguyễn Văn Cập Nhật\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"NAM\",\n  \"address\": \"321 Lý Thường Kiệt, Q.10, TP.HCM\",\n  \"phoneNumber\": \"0987654321\",\n  \"email\": \"vancn@example.com\",\n  \"identityNumber\": \"012345678\",\n  \"emergencyContactName\": \"Trần Văn D\",\n  \"emergencyContactPhone\": \"0911222333\",\n  \"isActive\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/patients/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patients", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get All Patients",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/patients",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patients"]
+        }
+      }
+    },
+    {
+      "name": "Create Medical Record",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-User-Id", "value": "system"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientId\": 1,\n  \"recordType\": \"Khám tổng quát\",\n  \"medicalHistory\": \"Không có tiền sử bệnh lý lớn.\",\n  \"currentMedications\": \"Không\",\n  \"allergies\": \"Không rõ\",\n  \"clinicalNotes\": \"Sốt nhẹ, đau họng\",\n  \"lastTestDate\": \"2024-10-29\",\n  \"patientAgeAtRecord\": 34,\n  \"patientSnapshotData\": \"H/ ảnh tổng quát, BMI: 22\",\n  \"recordDate\": \"2024-10-30\",\n  \"changeReason\": \"Khám định kỳ\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/patient-medical-records",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patient-medical-records"]
+        }
+      }
+    },
+    {
+      "name": "Update Medical Record",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "X-User-Id", "value": "system"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientId\": 1,\n  \"recordType\": \"Nội trú\",\n  \"medicalHistory\": \"Tiểu đường\",\n  \"currentMedications\": \"Metformin\",\n  \"allergies\": \"Không\",\n  \"clinicalNotes\": \"Khỏi bệnh\",\n  \"lastTestDate\": \"2024-11-01\",\n  \"patientAgeAtRecord\": 34,\n  \"patientSnapshotData\": \"BMI: 23\",\n  \"recordDate\": \"2024-11-01\",\n  \"changeReason\": \"Theo dõi định kỳ\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/patient-medical-records/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patient-medical-records", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Medical Records By Patient",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/patient-medical-records/patient/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patient-medical-records", "patient", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Patient",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {"key": "X-User-Id", "value": "system"}
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/patients/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patients", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Medical Record",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {"key": "X-User-Id", "value": "system"}
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/patient-medical-records/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "patient-medical-records", "1"]
+        }
+      }
+    }
+  ]
+}

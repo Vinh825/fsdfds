@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseToolSources">
+    <data-source name="localhost" uuid="e334ba49-8100-4399-8328-acf4c2a33978" type="REDIS">
+      <base-info connect-type="DB_DEFAULT" product="Redis Standalone" version="8.2.1" major-version="8" minor-version="2" jdbc-name="Redis JDBC Driver" jdbc-version="1.5" jdbc-major-version="1" jdbc-minor-version="5" />
+      <user-name />
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="0" operator="@" />
+            <name qname="1" operator="@" />
+            <name qname="2" operator="@" />
+            <name qname="3" operator="@" />
+            <name qname="4" operator="@" />
+            <name qname="5" operator="@" />
+            <name qname="6" operator="@" />
+            <name qname="7" operator="@" />
+            <name qname="8" operator="@" />
+            <name qname="9" operator="@" />
+            <name qname="10" operator="@" />
+            <name qname="11" operator="@" />
+            <name qname="12" operator="@" />
+            <name qname="13" operator="@" />
+            <name qname="14" operator="@" />
+            <name qname="15" operator="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+      <choose-schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="0" operator="@" />
+          </node>
+        </introspection-scope>
+      </choose-schema-mapping>
+      <use-database kind="schema">
+        <name qname="0" operator="@" />
+      </use-database>
+      <url>jdbc:redis://localhost:6379/0</url>
+      <remarks />
+      <vm-options />
+      <driver-info id="redis" />
+      <ssh-properties enabled="false" />
+      <ssl-config enabled="false">
+        <uuid />
+        <caFile />
+        <clientCertificateFile />
+        <clientKeyFile />
+        <sslMode>REQUIRE</sslMode>
+      </ssl-config>
+    </data-source>
+  </component>
+</project>

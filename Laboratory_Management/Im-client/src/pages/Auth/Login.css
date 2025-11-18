@@ -1,0 +1,374 @@
+/* Chỉ áp dụng cho trang login, không ảnh hưởng global */
+.lp-page {
+    position: relative;
+    width: 100vw;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.lp-blob {
+    position: absolute;
+    filter: blur(90px);
+    opacity: 0.28;
+    pointer-events: none;
+}
+
+.lp-blob-a {
+    width: 420px;
+    height: 420px;
+    left: -120px;
+    top: -120px;
+    background: var(--green);
+}
+
+.lp-blob-b {
+    width: 780px;
+    height: 780px;
+    right: -220px;
+    bottom: -260px;
+    background: var(--cyan);
+}
+
+.lp-page::after {
+    content: "";
+    position: absolute;
+    right: -18vw;
+    bottom: -20vh;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(closest-side,
+            rgba(6, 182, 212, 0.3),
+            transparent 65%);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+.lp-wrap {
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.lp-card {
+    position: relative;
+    width: min(1380px, 96vw);
+    background: rgba(16, 22, 38, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: min(calc(100dvh - 2 * clamp(16px, 2vw, 40px)), 900px);
+    min-height: 560px;
+    width: min(1380px, 96vw);
+}
+
+@media (min-width: 900px) {
+    .lp-card {
+        grid-template-columns: 1fr 1.02fr;
+        column-gap: clamp(24px, 3.6vw, 40px);
+    }
+
+    .lp-card::before {
+        content: "";
+        position: absolute;
+        left: calc(50% - 2px);
+        top: 24px;
+        bottom: 24px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.055);
+        pointer-events: none;
+    }
+}
+
+.lp-left {
+    padding: clamp(28px, 3.2vw, 48px) clamp(28px, 3.2vw, 60px);
+    padding-right: clamp(28px, 5vw, 56px);
+    margin-top: 200px;
+}
+
+.lp-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.lp-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: #0b0f1a;
+    background: radial-gradient(120% 120% at 30% 20%,
+            #34d399 0%,
+            #22c55e 55%,
+            #16a34a 100%);
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.22), 0 8px 20px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lp-kicker {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.48);
+    margin: 0 0 4px 0;
+}
+
+.lp-title {
+    margin: 0;
+    line-height: 1.18;
+    font-weight: 800;
+    font-size: clamp(18px, 1.8vw, 24px);
+    color: #e9f3ee;
+    letter-spacing: 0.2px;
+}
+
+.lp-title span {
+    background: linear-gradient(90deg, #22c55e, #14b8a6, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 560px;
+}
+
+.lp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lp-label {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.56);
+}
+
+.lp-inputwrap {
+    position: relative;
+}
+
+.lp-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.lp-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 38px 0 36px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.lp-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.lp-input:focus {
+    border-color: rgba(34, 197, 94, 0.6);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lp-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+}
+
+.lp-eye:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.lp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+
+.lp-remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.lp-remember input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--green-2);
+}
+
+.lp-link {
+    background: none;
+    border: none;
+    color: #34d399;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.lp-link:hover {
+    color: #6ee7b7;
+}
+
+.lp-error {
+    color: #fb7185;
+    font-size: 14px;
+    margin: 2px 0 0;
+}
+
+.lp-btn {
+    margin-top: 6px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, var(--green), var(--green-2));
+    color: #0b0f1a;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+    transition: transform 0.06s ease, filter 0.2s ease;
+}
+
+.lp-btn:hover {
+    filter: brightness(1.05);
+}
+
+.lp-btn:active {
+    transform: translateY(1px);
+}
+
+.lp-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.lp-right {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 24px 24px 0;
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .lp-right {
+        display: block;
+    }
+}
+
+.lp-right-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #22c55e, #14b8a6, #06b6d4);
+    opacity: 0.9;
+}
+
+.lp-right-blur {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    filter: blur(40px);
+}
+
+.lp-right-blur-a {
+    width: 220px;
+    height: 220px;
+    left: -40px;
+    top: -30px;
+}
+
+.lp-right-blur-b {
+    width: 260px;
+    height: 260px;
+    right: -50px;
+    bottom: -40px;
+}
+
+.lp-right-content {
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: clamp(36px, 4vw, 64px) clamp(32px, 4vw, 72px);
+    color: #fff;
+}
+
+.lp-right-content h1 {
+    margin: 0 0 10px 0;
+    font-size: clamp(34px, 5vw, 68px);
+    line-height: 1.03;
+    font-weight: 900;
+    letter-spacing: 0.1px;
+    text-wrap: balance;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.lp-right-content p {
+    margin: 39px 0 0 0;
+    max-width: 520px;
+    font-size: clamp(14px, 1.1vw, 20px);
+    line-height: 1.6;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+@media (min-width: 900px) {
+    .lp-card::before {
+        background: rgba(255, 255, 255, 0.055);
+    }
+}
+
+:where(button, [role="button"], .lp-link):focus-visible {
+    outline: 2px solid rgba(34, 197, 94, 0.7);
+    outline-offset: 2px;
+    border-radius: 10px;
+}

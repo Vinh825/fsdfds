@@ -1,0 +1,196 @@
+.create-user-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    padding: 24px;
+}
+
+.create-user-container {
+    background: rgba(16, 22, 38, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+.create-user-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--line);
+}
+
+.create-user-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.create-user-icon {
+    color: var(--green);
+}
+
+.create-user-container h2 {
+    text-align: center;
+    color: var(--text);
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.form-group label svg {
+    color: var(--green);
+    transition: transform 0.3s ease;
+}
+
+.form-group:focus-within label svg {
+    transform: scale(1.1);
+    color: var(--cyan);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group select::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--green), var(--green-2));
+    color: var(--bg);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.3s, opacity 0.3s, transform 0.06s;
+    margin-top: 1rem;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+.btn-submit svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) svg {
+    transform: scale(1.1);
+}
+
+.btn-loader {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-submit:hover {
+    filter: brightness(1.05);
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
+}
+
+.btn-submit[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Thông báo */
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message.success {
+    background: rgba(34, 197, 94, 0.12);
+    color: #a7f3d0;
+    border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.message.error {
+    background: rgba(239, 68, 68, 0.12);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
